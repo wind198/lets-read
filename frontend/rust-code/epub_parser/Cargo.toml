@@ -1,0 +1,11 @@
+[package]
+name = "epub_parser"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+epub = "1.1"  # EPUB parsing library

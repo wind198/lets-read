@@ -1,14 +1,16 @@
 import { Drawer } from "@mui/material";
-import { useGlobalPanelStore } from "../../stores/global-panels";
+import { getLeftPanelW, useGlobalPanelStore } from "../../stores/global-panels";
 
 export default function LeftPanel() {
-  const leftPanelWidth = useGlobalPanelStore((s) => s.leftPanelWidth);
+  const leftPanelWidth = useGlobalPanelStore(getLeftPanelW);
 
   return (
     <Drawer
       variant="permanent"
       hideBackdrop
-      slotProps={{ paper: { sx: { width: leftPanelWidth + "px" } } }}
+      slotProps={{
+        paper: { sx: { width: leftPanelWidth + "px" }, elevation: 2 },
+      }}
     >
       Drawer
     </Drawer>
